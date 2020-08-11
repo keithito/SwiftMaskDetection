@@ -1,6 +1,6 @@
 PODS:
   - SnapKit (5.0.1)
-  - SwiftMaskDetection (0.1.0)
+  - SwiftMaskDetection (0.1.1)
 
 DEPENDENCIES:
   - SnapKit
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftMaskDetection: aa4e80f005fc3bf3eb5f807d88ac872e23b8c338
+  SwiftMaskDetection: 6d8463e3cc32d00c2e4c403e0ee01c0cba11ecfa
 
 PODFILE CHECKSUM: 72d1c8eb42c5f3f47cc41f64736fb07d2e2b00d4
 

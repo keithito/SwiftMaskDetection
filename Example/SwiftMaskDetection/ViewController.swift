@@ -20,7 +20,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    detector = MaskDetectionVideoHelper(maskDetector: MaskDetector())
+    detector = MaskDetectionVideoHelper(maskDetector: MaskDetector(maxResults: maxFaces))
     view.backgroundColor = .white
     configureCaptureSession()
     configureUI()

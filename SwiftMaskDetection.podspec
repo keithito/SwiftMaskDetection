@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftMaskDetection'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A face mask detection library written in Swift.'
   s.homepage         = 'https://github.com/keithito/SwiftMaskDetection'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

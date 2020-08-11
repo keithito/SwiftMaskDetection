@@ -27,7 +27,7 @@ import SwiftMaskDetection
 
 let detector = MaskDetector()
 let image = UIImage(named: "my_photo")!
-if let results = try detector.detectMasks(cgImage: image.cgImage!) {
+if let results = try? detector.detectMasks(cgImage: image.cgImage!) {
   // Do something with the results.
 }
 ```
