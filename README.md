@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 
-SwiftMaskDetection is a face mask detection library written in Swift.
+SwiftMaskDetection is a face mask detection library with a Swift interface.
 
 It ports [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection) to
 CoreML and provides a Swift interface to it so it can be used easily in iOS apps.
