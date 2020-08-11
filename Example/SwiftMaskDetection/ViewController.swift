@@ -20,7 +20,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    detector = MaskDetectionVideoHelper(maskDetector: MaskDetector(), resizeMode: .centerCrop)
+    detector = MaskDetectionVideoHelper(maskDetector: MaskDetector())
     view.backgroundColor = .white
     configureCaptureSession()
     configureUI()
@@ -68,8 +68,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     for i in 0..<boxes.count {
       if i < results.count {
         let frame = previewView.toViewCoords(results[i].bound, mirrored: camera == .front)
+        let label = results[i].status == .mask ? "Mask" : "No Mask"
         boxes[i].show(frame: frame,
-                      label: results[i].status == .mask ? "Mask" : "No Mask",
+                      label: "\(label) \(String(format: "%.2f", results[i].confidence))",
                       color: results[i].status == .mask ? .systemGreen : .red)
       } else {
         boxes[i].hide()
