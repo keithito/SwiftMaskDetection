@@ -7,11 +7,69 @@
 
 SwiftMaskDetection is a face mask detection library written in Swift.
 
-It provides provides an interface to [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection).
-so that face mask detection can easily be run in iPhone and iPad apps.
+It ports [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection) to
+CoreML and provides a Swift interface to it for easy use in iOS apps.
 
-The model has been converted to CoreML using [coremltools](https://apple.github.io/coremltools/), and
-runs at > 30fps on recent iPhones and iPads.
+The model was converted to CoreML with the [convert.py](./Converter/convert.py) script. It runs at
+over 30fps on recent iPhones and iPads. For more information on the model and training data,
+please see https://github.com/AIZOOTech/FaceMaskDetection.
+
+
+## Usage
+
+
+### Images
+
+To recognize an image:
+
+```swift
+import SwiftMaskDetection
+
+let detector = MaskDetector()
+let image = UIImage(named: "my_photo")!
+if let results = try detector.detectMasks(cgImage: image.cgImage!) {
+  // Do something with the results.
+}
+```
+
+The image **must be 260x260 pixels**. `detectMasks` supports `CGImage`, `CIImage`, and `CVPixelBuffer` inputs and
+returns an array of `Results`, one for each detected face:
+
+```swift
+public struct Result {
+  /// The status of the detection (.mask or .noMask)
+  public let status: Status
+
+  /// The bounding box of the face in normalized coordinates (the top-left corner of the image
+  /// is [0, 0], and the bottom-right corner is [1, 1]).
+  public let bound: CGRect
+
+  /// Value between 0 and 1 representing the confidence in the result
+  public let confidence: Float
+}
+```
+
+
+### Video
+
+`MaskDetectionVideoHelper` may come in handy for running on live video. First, create the helper:
+
+```swift
+let helper = MaskDetectionVideoHelper(maskDetector: MaskDetector())
+```
+
+Then call `detectInFrame` on each video frame:
+
+```swift
+if let results = try? detector.detectInFrame(cmSampleBuffer) {
+  // Do something with the results.
+}
+
+```
+
+You don't need to resize the image to 260x260; the helper does that for you. See the example app's
+[ViewController](./Example/SwiftMaskDetection/ViewController.swift) for a complete example.
+
 
 
 ## Requirements
@@ -31,10 +89,6 @@ it, add the following line to your Podfile:
 ```ruby
 pod 'SwiftMaskDetection'
 ```
-
-## Usage
-
-TODO
 
 
 ## License
