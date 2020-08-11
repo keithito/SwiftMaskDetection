@@ -1,4 +1,5 @@
-// Copied from https://github.com/hollance/YOLO-CoreML-MPSNNGraph (MIT License)
+// From https://github.com/hollance/YOLO-CoreML-MPSNNGraph
+// Copyright (c) 2017-2018 M.I. Hollemans. MIT License.
 import Foundation
 import UIKit
 

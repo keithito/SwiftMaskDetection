@@ -1,5 +1,7 @@
 // Copyright © 2020 Keith Ito. MIT License.
-// Portions based on https://github.com/AIZOOTech/FaceMaskDetection under the MIT License.
+//
+// Portions of this file are based on https://github.com/AIZOOTech/FaceMaskDetection
+// Copyright (c) 2020 AIZOOTech. MIT License.
 import AVFoundation
 import CoreImage
 import Vision

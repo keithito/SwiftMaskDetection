@@ -1,4 +1,3 @@
-// Copyright © 2020 Toolbox AI. All rights reserved.
 import AVFoundation
 import UIKit
 
