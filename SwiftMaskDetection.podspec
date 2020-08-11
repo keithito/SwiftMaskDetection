@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source_files     = 'SwiftMaskDetection/Classes/**/*.{swift,mlmodel}'
   s.resources        = 'SwiftMaskDetection/Classes/**/*.json'
   s.pod_target_xcconfig   = { 'COREML_CODEGEN_LANGUAGE' => 'Swift' }
+  s.swift_version    = '5.0'
   s.ios.deployment_target = '10.0'
   s.description      = <<-END
 SwiftMaskDetection is a port of the AIZOO FaceMaskDetection model to CoreML, with a Swift interface.
