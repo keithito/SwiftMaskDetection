@@ -8,10 +8,10 @@ import CoreImage
 /// to the MaskDetector. See the Example for usage.
 @available(iOS 13.0, *)
 public class MaskDetectionVideoHelper {
-  /// How input images are made square if they are not alraedy. The model requires square images.
+  /// Controls how input images are resized to square 260x260 images for the model.
   public enum ResizeMode {
     /// Images are cropped along the longer dimension, with equal amounts removed from each side.
-    /// This does not distort the image, but portions of the image will trigger the detector.
+    /// This doesn't distort the image, but recognition will only happen in the center square.
     case centerCrop
     /// Images are stretched to be square. Recognition can take place in the entire image, but
     /// there will be distortion, which may affect model performance.
@@ -32,7 +32,6 @@ public class MaskDetectionVideoHelper {
   /// Runs the detector on the given CMSampleBuffer.
   /// This blocks while detection is being performed and should not be called on the main thread.
   public func detectInFrame(_ buffer: CMSampleBuffer) throws -> [MaskDetector.Result] {
-    // Center crop and scale to 260x260. Squeezing seems to degrade model performance.
     guard let image = CMSampleBufferGetImageBuffer(buffer) else { return [] }
     let width = CVPixelBufferGetWidth(image)
     let height = CVPixelBufferGetHeight(image)
