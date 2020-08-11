@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/keithito/SwiftMaskDetection'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Keith Ito' => 'kito@kito.us' }
-  s.source           = { :git => 'https://github.com/Keith Ito/SwiftMaskDetection.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/keithito/SwiftMaskDetection.git', :tag => s.version.to_s }
   s.source_files     = 'SwiftMaskDetection/Classes/**/*.{swift,mlmodel}'
   s.resources        = 'SwiftMaskDetection/Classes/**/*.json'
   s.pod_target_xcconfig   = { 'COREML_CODEGEN_LANGUAGE' => 'Swift' }
