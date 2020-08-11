@@ -1,6 +1,8 @@
 # SwiftMaskDetection
 
+<!--
 [![CI Status](https://img.shields.io/travis/keithito/SwiftMaskDetection.svg?style=flat)](https://travis-ci.org/keithito/SwiftMaskDetection)
+-->
 [![Version](https://img.shields.io/cocoapods/v/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 [![License](https://img.shields.io/cocoapods/l/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
@@ -8,11 +10,13 @@
 SwiftMaskDetection is a face mask detection library written in Swift.
 
 It ports [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection) to
-CoreML and provides a Swift interface to it for easy use in iOS apps.
+CoreML and provides a Swift interface to it so it can be used easily in iOS apps.
 
 The model was converted to CoreML with the [convert.py](./Converter/convert.py) script. It runs at
 over 30fps on recent iPhones and iPads. For more information on the model and training data,
 please see https://github.com/AIZOOTech/FaceMaskDetection.
+
+![Demo video](https://data.keithito.com/maskdetection/maskdemo.gif)
 
 
 ## Usage
