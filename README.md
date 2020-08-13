@@ -94,7 +94,7 @@ let helper = MaskDetectionVideoHelper(maskDetector: MaskDetector())
 Then call `detectInFrame` on each video frame:
 
 ```swift
-if let results = try? detector.detectInFrame(cmSampleBuffer) {
+if let results = try? helper.detectInFrame(cmSampleBuffer) {
   // Do something with the results.
 }
 
