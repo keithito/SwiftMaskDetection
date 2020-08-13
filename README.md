@@ -7,20 +7,49 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftMaskDetection.svg?style=flat)](https://cocoapods.org/pods/SwiftMaskDetection)
 
+
 SwiftMaskDetection is a face mask detection library with a Swift interface.
 
-It ports [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection) to
-CoreML and provides a Swift interface to it so it can be used easily in iOS apps.
+It is a port of [AIZOO's FaceMaskDetection model](https://github.com/AIZOOTech/FaceMaskDetection) to
+CoreML. The model runs at over 30fps on recent iPhones and iPads. For more information on the model and training data,
+please see https://github.com/AIZOOTech/FaceMaskDetection (AIZOO did all the hard work).
 
-The model was converted to CoreML with the [convert.py](./Converter/convert.py) script. It runs at
-over 30fps on recent iPhones and iPads. For more information on the model and training data,
-please see https://github.com/AIZOOTech/FaceMaskDetection.
+## Demo
 
-![Demo video](https://data.keithito.com/maskdetection/maskdemo.gif)
+![Demo video](https://data.keithito.com/maskdetection/detection1.gif)
+![Demo video](https://data.keithito.com/maskdetection/detection2.gif)
+
+To run the demo:
+
+  1. Make sure you have [Xcode](https://developer.apple.com/support/xcode/) and [CocoaPods](https://cocoapods.org/).
+  
+  2. Clone this repo and open the example project:
+     ```
+     git clone https://github.com/keithito/SwiftMaskDetection.git
+     cd Example 
+     pod install
+     open SwiftMaskDetection.xcworkspace
+     ```
+     
+  3. Run the project from XCode on a device (it needs the camera)
+      * If you see an error that signing needs a development team, open the "SwiftMaskDetection" project, click on
+        the "Signing & Capabilities" tab, and select an option from the "Team" menu.
+  
+
+## Installation
+
+SwiftMaskDetection is available through [CocoaPods](https://cocoapods.org). To install it, add the following
+line to your Podfile:
+
+```ruby
+pod 'SwiftMaskDetection'
+```
+
+
+If you don't use CocoaPods, you can simply copy the files in [SwiftMaskDetection/Classes](https://github.com/keithito/SwiftMaskDetection/tree/master/SwiftMaskDetection/Classes) into your Xcode project.
 
 
 ## Usage
-
 
 ### Images
 
@@ -79,20 +108,6 @@ You don't need to resize the image to 260x260; the helper does that for you. See
 ## Requirements
   * iOS 13 or later
 
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory.
-
-
-## Installation
-
-SwiftMaskDetection is available through [CocoaPods](https://cocoapods.org). To install
-it, add the following line to your Podfile:
-
-```ruby
-pod 'SwiftMaskDetection'
-```
 
 
 ## License
