@@ -26,7 +26,7 @@ To run the demo:
   2. Clone this repo and open the example project:
      ```
      git clone https://github.com/keithito/SwiftMaskDetection.git
-     cd Example 
+     cd SwiftMaskDetection/Example 
      pod install
      open SwiftMaskDetection.xcworkspace
      ```
