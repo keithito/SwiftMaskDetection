@@ -81,7 +81,7 @@ public class MaskDetector {
   /// Detects faces with masks or not in the input image. This blocks while detection is
   /// being performed and should not be called on the main thread.
   /// - Parameters:
-  ///   - cgImage: A 260x260 CGImage
+  ///   - ciImage: A 260x260 CIImage
   ///   - orientation: The orientation of the input image (default .up)
   /// - Returns: An array of detection results, one for each face
   public func detectMasks(ciImage: CIImage,
