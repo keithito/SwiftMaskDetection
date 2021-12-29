@@ -1,3 +1,3 @@
 coremltools==4.0b2
 numpy==1.19.1
-Pillow==7.2.0
+Pillow==8.3.2
